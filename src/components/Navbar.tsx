@@ -1,3 +1,8 @@
+import { Dropdown } from "flowbite-react";
+import { Button } from "./Button";
+import { useState } from "react";
+import { Menu } from "lucide-react";
+
 const links = [
 	{
 		url: "#home",
@@ -18,10 +23,11 @@ const links = [
 ];
 
 export function Navbar() {
+	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<>
-			<nav className="hidden ">
-				<ul className="flex gap-3 font-mono">
+			<nav>
+				<ul className="flex xs:hidden gap-3 font-mono">
 					{links.map((link) => (
 						<li
 							key={link.name}
@@ -31,6 +37,13 @@ export function Navbar() {
 						</li>
 					))}
 				</ul>
+				<button
+					onClick={() => setIsOpen(true)}
+					className="hidden xs:block p-2 outline outline-2 outline-aqua hover:bg-gradient-to-r from-blue via-aqua to-green rounded-md hover:text-white"
+				>
+					<Menu size={24} />
+					<p className={`hidden ${isOpen && "block"}`}>Open</p>
+				</button>
 			</nav>
 		</>
 	);

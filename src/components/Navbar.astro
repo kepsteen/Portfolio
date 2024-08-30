@@ -1,0 +1,48 @@
+---
+import { Menu } from "lucide-react";
+
+const links = [
+	{
+		url: "#home",
+		name: "Home",
+	},
+	{
+		url: "#about",
+		name: "About",
+	},
+	{
+		url: "#projects",
+		name: "Projects",
+	},
+	{
+		url: "#contact",
+		name: "Contact",
+	},
+];
+---
+
+<nav>
+<ul class="flex xs:hidden gap-3 font-mono">
+  {links.map((link) => (
+    <li
+      class="hover:text-aqua transition-colors ease-in-out"
+    >
+      <a href={link.url}>{link.name}</a>
+    </li>
+  ))}
+</ul>
+<button
+  class="hidden xs:block p-2 outline outline-2 outline-aqua hover:bg-gradient-to-r from-blue via-aqua to-green rounded-md hover:text-white"
+  id="hamburger"
+  >
+  <Menu size={24} />
+</button>
+</nav>
+
+<script>
+  const $button = document.querySelector('#hamburger');
+  if (!$button) throw new Error('Button not found.')
+  $button.addEventListener('click', () => {
+    
+  })
+</script>
