@@ -1,13 +1,36 @@
+const links = [
+	{
+		url: "#home",
+		name: "Home",
+	},
+	{
+		url: "#about",
+		name: "About",
+	},
+	{
+		url: "#projects",
+		name: "Projects",
+	},
+	{
+		url: "#contact",
+		name: "Contact",
+	},
+];
+
 export function Navbar() {
 	return (
 		<>
 			<nav>
-				{/* <ul className="flex gap-3 font-mono">
-					<li>Home</li>
-					<li>About</li>
-					<li>Projects</li>
-					<li>Contact</li>
-				</ul> */}
+				<ul className="flex gap-3 font-mono">
+					{links.map((link) => (
+						<li
+							key={link.name}
+							className="hover:text-aqua transition-colors ease-in-out"
+						>
+							<a href={link.url}>{link.name}</a>
+						</li>
+					))}
+				</ul>
 			</nav>
 		</>
 	);
