@@ -20,7 +20,7 @@ const links = [
 export function Navbar() {
 	return (
 		<>
-			<nav>
+			<nav className="hidden ">
 				<ul className="flex gap-3 font-mono">
 					{links.map((link) => (
 						<li
