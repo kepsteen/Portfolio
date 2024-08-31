@@ -22,7 +22,7 @@ const links = [
 ---
 
 <nav>
-<ul class="flex xs:hidden gap-3 font-mono">
+<ul class="hidden xs:flex gap-3 font-mono">
   {links.map((link) => (
     <li
       class="hover:text-aqua transition-colors ease-in-out"
@@ -32,17 +32,37 @@ const links = [
   ))}
 </ul>
 <button
-  class="hidden xs:block p-2 outline outline-2 outline-aqua hover:bg-gradient-to-r from-blue via-aqua to-green rounded-md hover:text-white"
+  class="flex xs:hidden items-center h-8 p-2 outline outline-2 outline-aqua hover:bg-gradient-to-r from-blue via-aqua to-green rounded-md hover:text-white"
   id="hamburger"
   >
   <Menu size={24} />
 </button>
+<div class="absolute xs:hidden z-50 -translate-y-[500px] transition-all ease-in delay-75 top-16 left-0 right-0 flex justify-center bg-white shadow-sm" id="mobile-nav">
+	<ul class="flex flex-col gap-3 font-mono mb-4">
+		{links.map((link) => (
+    <li
+      class="hover:text-aqua transition-colors ease-in-out"
+    >
+      <a href={link.url}>{link.name}</a>
+    </li>
+  ))}
+	</ul>
+</div>
 </nav>
 
 <script>
   const $button = document.querySelector('#hamburger');
   if (!$button) throw new Error('Button not found.')
+
+	const $mobileNav = document.querySelector('#mobile-nav');
+	if (!$mobileNav) throw new Error('Mobile nav not found');
+
   $button.addEventListener('click', () => {
-    
+		$mobileNav.classList.toggle('-translate-y-[500px]')
   })
+
+	const $anchors = document.querySelectorAll('a');
+	$anchors.forEach((anchor) => anchor.addEventListener('click', () => {
+		$mobileNav.classList.toggle('-translate-y-[500px]');
+	}))
 </script>
