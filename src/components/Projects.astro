@@ -1,0 +1,60 @@
+---
+import Image from "astro/components/Image.astro";
+import meditrak from "../images/meditrak.png"
+import fitlog from '../images/fitlog.png'
+import { Icon } from "./Icon";
+import { Github, Rocket } from "lucide-react";
+---
+<section id="projects" class="pt-[80px] px-8">
+  <header class="mb-10 text-3xl font-bold text-center font-mono">
+    <h2>Projects</h2>
+  </header>
+  <article class="md:flex justify-center gap-4 mb-4">
+    <div class="max-w-[300px] md:max-w-[30%] sm: rounded-full mb-4 mx-auto md:mx-0">
+      <a href="https://meditrak.codyepstein.com" target="_blank">
+        <Image src={meditrak} alt="screen capture of meditrak project" class="w-full h-full rounded-md shadow-xl"/>
+      </a>
+    </div>
+    <div class="max-w-[300px] md:max-w-[40%] mx-auto md:mx-0">
+      <div class="flex items-center gap-4">
+        <h3 class="text-xl font-semibold font-mono mb-2 ">
+          MediTrak 
+        </h3>
+        <span>
+          <Icon client:load href="https://github.com/kepsteen/MediTrak">
+				    <Github size={24} className="icon"/>
+			    </Icon>
+          <Icon client:load href="https://meditrak.codyepstein.com">
+				    <Rocket size={24} className="icon"/>
+			    </Icon>
+        </span>
+      </div>
+      <p>A full-stack application built with <strong>React</strong>, <strong>TypeScript</strong>, <strong>Node with Express</strong>, <strong>PostgreSQL</strong> and <strong>Tailwind CSS</strong> to help patients manage their medications.</p>
+      <div>
+      </div>
+    </div>
+  </article>
+  <article class="md:flex justify-center gap-4">
+    <div class="max-w-[300px] md:max-w-[30%] sm:rounded-full mb-4 mx-auto md:mx-0">
+      <a href="https://kepsteen.github.io/fitlog/">
+        <Image src={fitlog} alt="screen capture of fitlog project" class="w-full h-full rounded-md shadow-xl"/>
+      </a>
+    </div>
+    <div class="max-w-[300px] mx-auto md:mx-0 md:max-w-[40%]">
+      <div class="flex items-center gap-4">
+        <h3 class="text-xl font-semibold font-mono mb-2 ">
+          Fitlog 
+        </h3>
+        <span>
+          <Icon client:load href="https://github.com/kepsteen/fitlog">
+				    <Github size={24} className="icon"/>
+			    </Icon>
+          <Icon client:load href="https://kepsteen.github.io/fitlog">
+				    <Rocket size={24} className="icon"/>
+			    </Icon>
+        </span>
+      </div>
+      <p>A Front-End application built with <strong>TypeScript</strong>, <strong>HTML</strong>, and <strong>CSS</strong> for fitness enthusiasts to search for exercises and create custom workouts.</p>
+    </div>
+  </article>
+</section>

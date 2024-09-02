@@ -4,7 +4,7 @@ export function Stack() {
 	return (
 		<>
 			<p className="text-center">
-				<span className="border-b-2 border-b-aqua p-2 text-2xl font-mono">
+				<span className="border-b-2 border-b-aqua p-2 text-2xl font-mono font-semibold">
 					Tech Stack
 				</span>
 			</p>

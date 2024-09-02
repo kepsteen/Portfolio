@@ -2,8 +2,12 @@
 import '@fontsource-variable/roboto-mono'
 import Layout from '../layouts/Layout.astro';
 import Home from '../components/Home.astro'
+import Projects from '../components/Projects.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
 
-
+export const GITHUB_URL = "https://github.com/kepsteen/";
+export const LINKEDIN_URL = "https://linkedin.com/in/cody-epstein";
 
 ---
 
@@ -11,10 +15,16 @@ import Home from '../components/Home.astro'
 	
 	<main class="w-screen">
 		<Home />
+        <Projects />
+        <About />
+        <Contact />
 	</main>
 </Layout>
 
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
 	html, body {
         width: 100%;
         margin: 0;
@@ -27,4 +37,7 @@ import Home from '../components/Home.astro'
         max-width: 100%;
         box-sizing: border-box;
     }
+    
+
+
 </style>

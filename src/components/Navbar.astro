@@ -7,12 +7,12 @@ const links = [
 		name: "Home",
 	},
 	{
-		url: "#about",
-		name: "About",
-	},
-	{
 		url: "#projects",
 		name: "Projects",
+	},
+	{
+		url: "#about",
+		name: "About",
 	},
 	{
 		url: "#contact",
@@ -25,7 +25,7 @@ const links = [
 <ul class="hidden xs:flex gap-3 font-mono">
   {links.map((link) => (
     <li
-      class="hover:text-aqua transition-colors ease-in-out"
+      class="hover:text-green transition-colors ease-in-out"
     >
       <a href={link.url}>{link.name}</a>
     </li>
