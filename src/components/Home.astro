@@ -2,6 +2,11 @@
 import Image from "astro/components/Image.astro";
 import cody from '../images/cody.png';
 import { Stack } from './Stack'
+import { TbBrandLinkedin } from "react-icons/tb";
+import { Icon } from "./Icon";
+import { Github } from "lucide-react";
+import { GITHUB_URL } from "../pages/index.astro";
+import { LINKEDIN_URL } from "../pages/index.astro";
 ---
 
 <section id="home" class="bg-whiteblue pt-[20px] sm:pt-[60px]">
@@ -17,13 +22,14 @@ import { Stack } from './Stack'
 	<div class="text-center my-5 px-8">
 		<h2 class="text-4xl font-extrabold mb-2 font-mono">Hi, I'm Cody <span class="animate-wave inline-block">👋🏼</span></h2>
 		<h3 class="text-2xl">I'm a Full-Stack Developer specializing in <strong>React</strong> based in Irvine, CA.📍</h3>
-		<div class="flex justify-center gap-2 mt-4">
-			<a href="https://github.com/kepsteen/" target="_blank">
-				<img src="https://skillicons.dev/icons?i=github" alt="github icon" class="w-[2rem] hover:translate-y-1 transition-all ease-in-out"/>
-			</a>
-			<a href="https://linkedin.com/in/cody-epstein" target="_blank">
-				<img src="https://skillicons.dev/icons?i=linkedin" alt="linked in icon" class="w-[2rem] hover:translate-y-1 transition-all ease-in-out">
-			</a>
+		<div class="flex justify-center items-center gap-2 mt-4">
+			<Icon client:load href={GITHUB_URL}>
+				<Github size={28} className="icon"/>
+			</Icon>
+			<Icon client:load href={LINKEDIN_URL}>
+				<TbBrandLinkedin size={32} className="icon"/>
+			</Icon>
+			
 		</div>
 		<div class="mt-4 sm:mt-10">
 		<Stack client:only/>
@@ -33,3 +39,7 @@ import { Stack } from './Stack'
 	
 	
 </section>
+
+<style>
+	
+</style>
