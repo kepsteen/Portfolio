@@ -18,6 +18,7 @@ export default {
 				aqua: "#2FB27F",
 				blue: "#2FA4B2",
 				green: "#34D544",
+				darkgreen: "#052411",
 			},
 			fontFamily: {
 				mono: ["Roboto Mono Variable", ...defaultTheme.fontFamily.mono],

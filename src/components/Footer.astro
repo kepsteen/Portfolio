@@ -1,0 +1,20 @@
+---
+import { TbBrandLinkedin } from "react-icons/tb";
+import { Icon } from "./Icon";
+import { Github } from "lucide-react";
+import { GITHUB_URL } from "../pages/index.astro";
+import { LINKEDIN_URL } from "../pages/index.astro";
+---
+
+
+<footer class="p-[60px] flex justify-between bg-darkgreen">
+  <p class="text-white font-mono">Copyright @ 2024. All rights reserved.</p>
+  <span class="flex justify-center items-center gap-2">
+			<Icon client:load href={GITHUB_URL}>
+				<Github size={28} className="icon" color="white"/>
+			</Icon>
+			<Icon client:load href={LINKEDIN_URL}>
+				<TbBrandLinkedin size={32} className="icon" color="white"/>
+			</Icon>
+		</span>
+</footer>

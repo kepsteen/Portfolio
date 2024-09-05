@@ -1,8 +1,22 @@
-<section id="about" class="bg-whiteblue pt-4">
+---
+import Image from "astro/components/Image.astro";
+import desk from "../images/desk.jpg"
+---
+
+<section id="about" class="bg-whiteblue py-[60px] px-8">
   <header class="text-3xl font-bold text-center font-mono">
     <h2>About</h2>
-    <h3 class="font-medium">🚧 Under Construction 🚧</h3>
-    <div class="h-[200px]">
-    </div>
   </header>
+  <div class="max-w-[320px] md:max-w-[700px] mx-auto">
+    <Image class="mt-4 w-full h-full object-cover rounded-md shadow-xl mx-auto max-w-[320px] md:basis1/3" src={desk} alt="picture of a desk surronded by plants"/>
+    <div class="mt-8 leading-tight text-lg space-y-4 md:basis-2/3">
+      <p>Hey, my name is Cody, and I'm a full-stack developer! </p>
+      <p>In my previous career, I worked as a nursing assistant and cardiac monitor tech. While 
+      working at the hospital, I wanted to learn something new, so I picked up coding as a hobby. What started off as a hobby quickly turned into a deep passion of mine and that realization led me to enroll in a web development boot camp, where I mastered
+       React, TypeScript, Node, and PostgreSQL. </p>
+    <p>
+      If you&#39;re looking for a full-stack developer with a passion for building innovative solutions then look no further!
+    </p>
+    </div>
+  </div>
 </section>
