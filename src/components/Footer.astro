@@ -4,11 +4,12 @@ import { Icon } from "./Icon";
 import { Github } from "lucide-react";
 import { GITHUB_URL } from "../pages/index.astro";
 import { LINKEDIN_URL } from "../pages/index.astro";
+import { Copyright } from "./Copyright";
 ---
 
 
 <footer class="p-[60px] flex justify-between bg-darkgreen">
-  <p class="text-white font-mono">Copyright @ 2024. All rights reserved.</p>
+	<Copyright client:load/>
   <span class="flex justify-center items-center gap-2">
 			<Icon client:load href={GITHUB_URL}>
 				<Github size={28} className="icon" color="white"/>
